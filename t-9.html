@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<title>Лабораторная №9</title>
+		<style>
+			@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css");
+		body {
+		padding: 10px;
+		background-color: khaki;
+		}
+		</style>
+</head>
+
+<h1><code>Алексюнина Юлия Вячеславовна М8О-106М-21</code></h1>
+<h2><code>Лабораторная №9: Построение графика/диаграммы по данным на canvas</code> </h2>		
+<script>
+
+
+function finit(){
+	cv = document.getElementById("cv").getContext("2d");
+    with (cv) {
+        strokeRect(0, 0, 605, 300);
+        translate(0, 300);
+        
+        strokeStyle = "rgb(255,165,0)";
+        moveTo(0, 0);
+        for(j = 0; j < 31; j++) {
+            lineTo(20 * j, -(Math.random() * 300));
+        }
+            
+        fillStyle = "rgb(123,135,67)";
+        x = 0;
+        for(j = 0; j < 31; j++) {
+            fillRect(x, 100, 5, -(Math.random() * 300) - 100);
+            x += 20;
+        }
+
+        stroke();
+    }
+}
+
+</script>
+<body onload="finit()">
+	<canvas id="cv" width=700 height=300>??</canvas>

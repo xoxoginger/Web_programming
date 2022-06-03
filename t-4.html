@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная №4</title>
+    <style>
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css");
+    body {
+    padding: 10px;
+    background-color: khaki;
+    }
+
+    /* 1 */
+    p { margin: 8px; font-size:16px; }
+        .selected { color:whitesmoke; }
+        .highlight { background: rgb(113, 156, 236); }
+
+    /* 2 */
+    #sq{
+        background: pink;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        padding: 10px;
+        border:5px solid rgb(173, 49, 49);
+        }
+
+    /* 3 */
+    form { margin:10px;padding:10px;border:5px solid lightcoral; 
+        height: 380px; width: 300px; }
+    /* 4 */
+    #pwidth{
+        margin:10px;padding:5px;border:2px solid #666;
+    }
+
+    /* 5 - */
+    /* 6 - */
+    
+    /* 7 */
+    button {
+        margin: 5px;
+        }
+
+        img {
+            width: 30%;
+            height: 30%;
+        }
+
+        button#theone {
+        color: whitesmoke;
+        background: orangered;
+        }
+
+    /* 8 */
+    #mouseover{
+        width: 200px; /* ширина элемента */	
+        height: 200px; /* высота элемента */	
+        background: rgb(156, 202, 49); /* цвет заднего фона */
+        border-radius: 10px;
+        padding: 50px;	
+        }
+
+    /* 9 */
+    #keydown{
+        padding: 10px;
+    }
+    /* 10 */
+    #slide{
+            display: inline-block; /* блочно-строчные элементы (выстраиваем элементы в линейку) */	
+            width: 75px; /* ширина элемента */	
+            height: 150px; /* высота элемента */	
+            margin-right: 20px; /* внешний отступ справа */	
+            background-color: rgb(162, 63, 201); /* цвет заднего фона */	
+        }
+
+    </style>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <h1><code>Алексюнина Юлия Вячеславовна М8О-106М-21</code></h1>
+    <h2><code>Лабораторная №4: jQuery</code> </h2>
+    <ol>
+        <li><a href="1.html"> addClass() + </a>
+        </li>
+        <li><a href="2.html"> position(), offset() + + </a>
+        </li>
+        <li><a href="3.html"> password + </a>
+        </li>
+        <li><a href="4.html"> innerWidth() + </a>
+        </li>
+        <li><a href="5.html"> wrap(), wrapAll() - - </a>
+        </li>
+        <li><a href="6.html"> parent() - </a>
+        </li>
+        <li><a href="7.html"> undelegate() + </a>
+        </li>
+        <li><a href="8.html"> mouseover() + </a>
+        </li>
+        <li><a href="9.html"> keydown() + </a>
+        </li>
+        <li><a href="10.html"> slideToggle() + </a>
+        </li>
+    </ol>
+
+    <h3>Применение addClass()</h3>
+    <h6>addClass() добавляет класс(ы) каждому выбранному элементу страницы.</h6>
+    <h6>Добавляем класс “selected”(белый цвет текста) и “highlight”(синий цвет фона) к первому параграфу.</h6>
+    <br> <br>
+
+    <p>Hello</p>
+    <p>and</p>
+    <p>Goodbye</p>
+    <br> <br>
+
+
+    <h3>Применение position(), offset()</h3>
+    <h6>position() получает значение позиции элемента top и left относительно отступов его родителя.</h6>
+    <h6>Получаем положение второго параграфа относительно документа и заносим полученные координаты в него же</h6>
+    
+    <br> 
+
+    <!-- position() -->
+    <div>
+        <p>Привет!</p>
+      </div>
+      <p></p>
+    
+    <br>
+
+    <h6>offset() возвращает/устанавливает координаты относительно начала страницы.</h6>
+    <h6>Кликая по квадрату, изменяем его координаты</h6>
+    <br>
+    <!-- offset() -->
+    <div>
+        <div id="sq"></div>
+    </div>
+    <br> <br>
+
+
+    <h3>Применение password</h3>
+    <h6>Cелектор :password выбирает все элементы input, которые имеют атрибут type со значением password.</h6>
+    <br> 
+
+
+    <form>
+        <input type = "text" placeholder = "Ваш логин"><br><br>
+        <input type = "password" placeholder = "Ваш пароль"><br><br>
+        <label><input  type = "radio" name = "sex" value = "male" checked> Мужчина </label>
+        <label><input type = "radio" name = "sex" value =  "female"> Женщина </label><br><br>
+        <label><input type = "checkbox" name = "type1" value = "busy"> Есть собака(-и)</label><br><br>
+        <label><input type = "checkbox" name = "type2" value = "free"> Есть кошка(-и)</label><br><br>
+        <label><input type = "checkbox" name = "type3" value = "childfree"> Нет домашних животных/Есть другие</label><br><br>
+        <input type = "reset">
+    </form>
+    <br> <br>
+
+
+    <h3>Применение innerWidth()</h3>
+    <h6>innerWidth() возвращает ширину элемента, включая внутренние отступы, в пикселях.</h6>
+    <h6>Получаем innerWidth второго параграфа и записываем это значение в него</h6>
+    <br> 
+
+    <p id="paragraph1"> Первый параграф </p>
+    <p id = "pwidth"></p>
+    <br> <br>
+
+
+    <h3>Применение undelegate()</h3>
+    <h6>undelegate() удаляет обработчики событий с элементов, подходящих под селектор, установленные методом delegate().</h6>
+    <h6>Включаем/отключаем обработку клика по кнопке</h6>
+    <br> 
+
+    <button id="theone">Does nothing...</button>
+    <button id="bind">Bind Click</button>
+    <button id="unbind">Unbind Click</button>
+    <br> <br>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Wikipedia-lolcat.jpg" 
+    style="display:none;" alt="Clicked!">
+    <br> <br>
+
+
+    <h3>Применение mouseover()</h3>
+    <h6>Обработчик событий "mouseover" (срабатывает, когда указатель мыши входит в элемент), или запускает это событие на выбранный элемент.</h6>
+    <h6>Вызываем событие mouseover() либо при нажатии на кнопку, либо при выхождении указателя мыши из элемента.</h6>
+    <br> 
+
+    <button>Нажми на меня</button>
+    <br>
+    <div id = "mouseover"></div> 
+    
+    <br> <br>
+
+
+    <h3>Применение keydown()</h3>
+    <h6>keydown() позволяет привязать обработчик событий нажатия на любую клавишу клавиатуры.</h6>
+    <h6>Получаем код клавиши при нажатии на нее.</h6>
+
+    <p>Нажмите любую кнопку на клавиатуре </p>
+    <br>
+    <div id = "keydown"></div>
+    
+    <br> <br>
+
+
+    <h3>Применение slideToggle()</h3>
+    <h6>slideToggle() позволяет плавно отобразить или скрыть выбранные элементы скользящим движением.</h6>
+    <h6>Сравниваем применение методов toggle() и slideToggle().</h6>
+    <br> <br>
+
+    <button class = "toggle">Метод .toggle()</button>
+    <button class = "slide-toggle">Метод .slideToggle()</button>
+    <hr>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+          <div id = "slide"></div>
+    <br> <br>
+
+
+<script>
+    //addClass()
+        //Имя класса(или имена классов, через пробел), которое требуется добавить к связанному элементу.
+        $("p:first").addClass("selected highlight");
+
+
+    //position() - Получает значение позиции элемента top и left относительно отступов его родителя.
+    //Получаем положение последнего параграфа относительно документа 
+    //и заносим полученные координаты в него же
+    var p = $("p:eq(4)");
+    var position = p.position();
+    $("p:eq(4)").text( "left: " + position.left + ", top: " + position.top );
+
+    // offset()
+    //.offset( function(index, coords) )
+    //Устанавливает координаты выбранных элементов, которые возвращает функция function.
+    //При вызове ей передаются параметры: index — (позиция элемента в наборе) и value (текущие координаты элемента).
+    $("#sq").click(function () {
+        $(this).offset(function(i, coord){
+            var  newCoord = {};
+            newCoord.top = coord.top + 10;
+            newCoord.left = coord.left + 10;
+            return newCoord;
+        });
+    });
+
+    //password
+    //jQuery селектор :password выбирает все элементы <input>, которые имеют атрибут type со значением password.
+    $(document).ready(function(){
+	$(":password").css("border", "1px solid orange"); // выбираем все элементы <input>, которые имеют атрибут type со значением password
+	});
+
+    //innerWidth()
+    //ширина элемента с учетом размера внутренних отступов (padding).
+    var p2 = $("p:eq(6)");
+    $("p:eq(6)").text( "innerWidth:" + p2.innerWidth() );
+
+    //undelegate()
+    //Удаляет обработчики событий с элементов, подходящих под селектор, установленные методом delegate().
+    function aClick() {
+    $( "img" ).show().fadeOut( "slow" );
+    }
+    $( "#bind" ).click(function() {
+    $( "body" )
+        .delegate( "#theone", "click", aClick )
+        .find( "#theone" ).text( "Can Click!" );
+    });
+    $( "#unbind" ).click(function() {
+    $( "body" )
+        .undelegate( "#theone", "click", aClick )
+        .find( "#theone" ).text( "Does nothing..." );
+    });
+
+    //mouseover()
+    //обработчик событий "mouseover" (срабатывает, когда указатель мыши входит в элемент), 
+    //или запускает это событие на выбранный элемент.
+    $( document ).ready(function(){
+        $( "button:eq(3)" ).click(function(){ // задаем функцию при нажатиии на элемент <button>
+            $( "div:eq(3)" ).mouseover(); // вызываем событие mouseover на элементе <div>
+        });
+        var num = 0; // переменная (счетчик возникновения события)
+        $( "div:eq(3)" ).mouseover(function(){ // задаем функцию при вхождении указателя мыши в элемент <div>
+            num ++; // инкремент	  
+            $( "div:eq(3)" ).text( "  " +  num + " times!"); // выводим количество срабатываний события
+            if(num % 100 == 0) {
+                 $( "div:eq(3)" ).text( "surprise, mazafaka");
+            }
+        });
+    });
+
+    //keydown() 
+    //позволяет привязать JavaScript обработчик событий "keydown" 
+    //(нажатие на любую клавишу клавиатуры), или запускает это событие на выбранный элемент.
+    $( document ).ready(function(){
+	$( "body" ).keydown(function( event ){ // задаем функцию при нажатиии любой клавиши клавиатуры на элементе
+	    $( "div:eq(4)" ).text( "Код нажатой кнопки: " +  event.which);
+        // выводим код нажатой клавиши
+	    });
+	});
+
+    //slideToggle() 
+    //позволяет плавно отобразить или скрыть выбранные элементы скользящим движением. 
+    //Если элемент изначально отображается, то он будет скрыт, если элемент скрыт, то он будет отображен.
+    $( document ).ready(function(){
+    $( ".toggle" ).click(function(){ // задаем функцию при нажатиии на элемент с классом toggle
+        $( "div:gt(4)" ).toggle(); //  скрываем, или отображаем все элементы <div>
+    });
+    $( ".slide-toggle" ).click(function(){ // задаем функцию при нажатиии на элемент с классом slide-toggle
+        $( "div:gt(4)" ).slideToggle(); // плавно скрываем, или отображаем все элементы <div>
+    });
+    });
+
+</script>
+</body>
+</html>
